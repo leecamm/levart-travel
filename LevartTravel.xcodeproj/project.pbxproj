@@ -11,6 +11,12 @@
 		DB26BE88291E5F1700ED6E3A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB26BE87291E5F1700ED6E3A /* ContentView.swift */; };
 		DB26BE8A291E5F1A00ED6E3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB26BE89291E5F1A00ED6E3A /* Assets.xcassets */; };
 		DB26BE8D291E5F1A00ED6E3A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB26BE8C291E5F1A00ED6E3A /* Preview Assets.xcassets */; };
+		DB26BE94291E67A300ED6E3A /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB26BE93291E67A300ED6E3A /* SplashScreenView.swift */; };
+		DB26BE9D291E6D4100ED6E3A /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DB26BE98291E6D4100ED6E3A /* Poppins-SemiBold.ttf */; };
+		DB26BE9E291E6D4100ED6E3A /* Poppins-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DB26BE99291E6D4100ED6E3A /* Poppins-ExtraBold.ttf */; };
+		DB26BE9F291E6D4100ED6E3A /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DB26BE9A291E6D4100ED6E3A /* Poppins-Regular.ttf */; };
+		DB26BEA0291E6D4100ED6E3A /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DB26BE9B291E6D4100ED6E3A /* Poppins-Medium.ttf */; };
+		DB26BEA1291E6D4100ED6E3A /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DB26BE9C291E6D4100ED6E3A /* Poppins-Bold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +25,13 @@
 		DB26BE87291E5F1700ED6E3A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DB26BE89291E5F1A00ED6E3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB26BE8C291E5F1A00ED6E3A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DB26BE93291E67A300ED6E3A /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
+		DB26BE98291E6D4100ED6E3A /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
+		DB26BE99291E6D4100ED6E3A /* Poppins-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraBold.ttf"; sourceTree = "<group>"; };
+		DB26BE9A291E6D4100ED6E3A /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		DB26BE9B291E6D4100ED6E3A /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
+		DB26BE9C291E6D4100ED6E3A /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
+		DB26BEA2291E6E2B00ED6E3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +64,11 @@
 		DB26BE84291E5F1700ED6E3A /* LevartTravel */ = {
 			isa = PBXGroup;
 			children = (
+				DB26BEA2291E6E2B00ED6E3A /* Info.plist */,
+				DB26BE97291E6D1800ED6E3A /* Font */,
 				DB26BE85291E5F1700ED6E3A /* LevartTravelApp.swift */,
 				DB26BE87291E5F1700ED6E3A /* ContentView.swift */,
+				DB26BE93291E67A300ED6E3A /* SplashScreenView.swift */,
 				DB26BE89291E5F1A00ED6E3A /* Assets.xcassets */,
 				DB26BE8B291E5F1A00ED6E3A /* Preview Content */,
 			);
@@ -65,6 +81,18 @@
 				DB26BE8C291E5F1A00ED6E3A /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DB26BE97291E6D1800ED6E3A /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				DB26BE9C291E6D4100ED6E3A /* Poppins-Bold.ttf */,
+				DB26BE99291E6D4100ED6E3A /* Poppins-ExtraBold.ttf */,
+				DB26BE9B291E6D4100ED6E3A /* Poppins-Medium.ttf */,
+				DB26BE9A291E6D4100ED6E3A /* Poppins-Regular.ttf */,
+				DB26BE98291E6D4100ED6E3A /* Poppins-SemiBold.ttf */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,8 +153,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB26BE9E291E6D4100ED6E3A /* Poppins-ExtraBold.ttf in Resources */,
+				DB26BE9D291E6D4100ED6E3A /* Poppins-SemiBold.ttf in Resources */,
+				DB26BEA1291E6D4100ED6E3A /* Poppins-Bold.ttf in Resources */,
 				DB26BE8D291E5F1A00ED6E3A /* Preview Assets.xcassets in Resources */,
+				DB26BEA0291E6D4100ED6E3A /* Poppins-Medium.ttf in Resources */,
 				DB26BE8A291E5F1A00ED6E3A /* Assets.xcassets in Resources */,
+				DB26BE9F291E6D4100ED6E3A /* Poppins-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,6 +172,7 @@
 			files = (
 				DB26BE88291E5F1700ED6E3A /* ContentView.swift in Sources */,
 				DB26BE86291E5F1700ED6E3A /* LevartTravelApp.swift in Sources */,
+				DB26BE94291E67A300ED6E3A /* SplashScreenView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +304,7 @@
 				DEVELOPMENT_TEAM = 7DKCK68FG7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LevartTravel/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -299,6 +334,7 @@
 				DEVELOPMENT_TEAM = 7DKCK68FG7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LevartTravel/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

@@ -27,9 +27,6 @@ struct SplashScreenView: View {
                                     .scaledToFill()
                                     .frame(width: 200, height: 200)
                                     .padding(.bottom, 20)
-                    Text("Travel is soooo Easy")
-                        .font(Font.custom("Poppins-ExtraBold", size: 28))
-                        .foregroundColor(.black.opacity(0.80))
                 }
                 .scaleEffect(size)
                 .opacity(opacity)

@@ -17,6 +17,9 @@
 		DB26BE9F291E6D4100ED6E3A /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DB26BE9A291E6D4100ED6E3A /* Poppins-Regular.ttf */; };
 		DB26BEA0291E6D4100ED6E3A /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DB26BE9B291E6D4100ED6E3A /* Poppins-Medium.ttf */; };
 		DB26BEA1291E6D4100ED6E3A /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DB26BE9C291E6D4100ED6E3A /* Poppins-Bold.ttf */; };
+		DB4635B5291F012800FCC73E /* Intro.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4635B4291F012800FCC73E /* Intro.swift */; };
+		DB4635B729251D5300FCC73E /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4635B629251D5300FCC73E /* IntroView.swift */; };
+		DB803F842927A98F00AE5522 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB803F832927A98F00AE5522 /* Home.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		DB26BE9B291E6D4100ED6E3A /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
 		DB26BE9C291E6D4100ED6E3A /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
 		DB26BEA2291E6E2B00ED6E3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		DB4635B4291F012800FCC73E /* Intro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Intro.swift; sourceTree = "<group>"; };
+		DB4635B629251D5300FCC73E /* IntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroView.swift; sourceTree = "<group>"; };
+		DB803F832927A98F00AE5522 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +70,8 @@
 		DB26BE84291E5F1700ED6E3A /* LevartTravel */ = {
 			isa = PBXGroup;
 			children = (
+				DB4635B3291F010300FCC73E /* View */,
+				DB4635B2291F00E700FCC73E /* Model */,
 				DB26BEA2291E6E2B00ED6E3A /* Info.plist */,
 				DB26BE97291E6D1800ED6E3A /* Font */,
 				DB26BE85291E5F1700ED6E3A /* LevartTravelApp.swift */,
@@ -93,6 +101,23 @@
 				DB26BE98291E6D4100ED6E3A /* Poppins-SemiBold.ttf */,
 			);
 			path = Font;
+			sourceTree = "<group>";
+		};
+		DB4635B2291F00E700FCC73E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DB4635B4291F012800FCC73E /* Intro.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DB4635B3291F010300FCC73E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DB4635B629251D5300FCC73E /* IntroView.swift */,
+				DB803F832927A98F00AE5522 /* Home.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -172,6 +197,9 @@
 			files = (
 				DB26BE88291E5F1700ED6E3A /* ContentView.swift in Sources */,
 				DB26BE86291E5F1700ED6E3A /* LevartTravelApp.swift in Sources */,
+				DB4635B729251D5300FCC73E /* IntroView.swift in Sources */,
+				DB4635B5291F012800FCC73E /* Intro.swift in Sources */,
+				DB803F842927A98F00AE5522 /* Home.swift in Sources */,
 				DB26BE94291E67A300ED6E3A /* SplashScreenView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

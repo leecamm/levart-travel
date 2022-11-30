@@ -15,6 +15,9 @@ class AppDelegate: NSObject, UIApplicationDelegate {
       if(FirebaseApp.app() == nil){
           FirebaseApp.configure()
       }
+      
+      
+      
     return true
   }
 }
@@ -29,12 +32,14 @@ extension LevartTravelApp {
 @main
 struct LevartTravelApp: App {
     
+    
     @StateObject var viewModel = AuthenticationViewModel()
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
     init() {
        setupAuthentication()
      }
+    
     
     var body: some Scene {
         WindowGroup {

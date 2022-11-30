@@ -19,7 +19,6 @@
 		DB26BEA1291E6D4100ED6E3A /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DB26BE9C291E6D4100ED6E3A /* Poppins-Bold.ttf */; };
 		DB4635B5291F012800FCC73E /* Intro.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4635B4291F012800FCC73E /* Intro.swift */; };
 		DB4635B729251D5300FCC73E /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4635B629251D5300FCC73E /* IntroView.swift */; };
-		DB4BF54C2936D4A300008BA5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB4BF54B2936D4A300008BA5 /* GoogleService-Info.plist */; };
 		DB4BF54F2936D60300008BA5 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = DB4BF54E2936D60300008BA5 /* FirebaseAnalytics */; };
 		DB4BF5512936D60300008BA5 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = DB4BF5502936D60300008BA5 /* FirebaseAuth */; };
 		DB4BF5532936D60300008BA5 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = DB4BF5522936D60300008BA5 /* FirebaseStorage */; };
@@ -28,6 +27,8 @@
 		DB4BF55B29375CCD00008BA5 /* GoogleSignInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4BF55A29375CCD00008BA5 /* GoogleSignInButton.swift */; };
 		DB4BF55D29375EC000008BA5 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4BF55C29375EC000008BA5 /* LoginView.swift */; };
 		DB4BF55F29376AED00008BA5 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4BF55E29376AED00008BA5 /* ProfileView.swift */; };
+		DB4BF56329378B6F00008BA5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB4BF56229378B6F00008BA5 /* GoogleService-Info.plist */; };
+		DB4BF56529381F1100008BA5 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4BF56429381F1100008BA5 /* SearchView.swift */; };
 		DB803F842927A98F00AE5522 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB803F832927A98F00AE5522 /* Home.swift */; };
 /* End PBXBuildFile section */
 
@@ -46,11 +47,12 @@
 		DB26BEA2291E6E2B00ED6E3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		DB4635B4291F012800FCC73E /* Intro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Intro.swift; sourceTree = "<group>"; };
 		DB4635B629251D5300FCC73E /* IntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroView.swift; sourceTree = "<group>"; };
-		DB4BF54B2936D4A300008BA5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DB4BF5572936D98000008BA5 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		DB4BF55A29375CCD00008BA5 /* GoogleSignInButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignInButton.swift; sourceTree = "<group>"; };
 		DB4BF55C29375EC000008BA5 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		DB4BF55E29376AED00008BA5 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		DB4BF56229378B6F00008BA5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DB4BF56429381F1100008BA5 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		DB803F832927A98F00AE5522 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -92,7 +94,7 @@
 				DB4635B3291F010300FCC73E /* View */,
 				DB4635B2291F00E700FCC73E /* Model */,
 				DB26BEA2291E6E2B00ED6E3A /* Info.plist */,
-				DB4BF54B2936D4A300008BA5 /* GoogleService-Info.plist */,
+				DB4BF56229378B6F00008BA5 /* GoogleService-Info.plist */,
 				DB26BE97291E6D1800ED6E3A /* Font */,
 				DB26BE85291E5F1700ED6E3A /* LevartTravelApp.swift */,
 				DB26BE87291E5F1700ED6E3A /* ContentView.swift */,
@@ -139,6 +141,7 @@
 				DB803F832927A98F00AE5522 /* Home.swift */,
 				DB4BF55C29375EC000008BA5 /* LoginView.swift */,
 				DB4BF55E29376AED00008BA5 /* ProfileView.swift */,
+				DB4BF56429381F1100008BA5 /* SearchView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -220,7 +223,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB26BE9E291E6D4100ED6E3A /* Poppins-ExtraBold.ttf in Resources */,
-				DB4BF54C2936D4A300008BA5 /* GoogleService-Info.plist in Resources */,
+				DB4BF56329378B6F00008BA5 /* GoogleService-Info.plist in Resources */,
 				DB26BE9D291E6D4100ED6E3A /* Poppins-SemiBold.ttf in Resources */,
 				DB26BEA1291E6D4100ED6E3A /* Poppins-Bold.ttf in Resources */,
 				DB26BE8D291E5F1A00ED6E3A /* Preview Assets.xcassets in Resources */,
@@ -247,6 +250,7 @@
 				DB4635B5291F012800FCC73E /* Intro.swift in Sources */,
 				DB803F842927A98F00AE5522 /* Home.swift in Sources */,
 				DB26BE94291E67A300ED6E3A /* SplashScreenView.swift in Sources */,
+				DB4BF56529381F1100008BA5 /* SearchView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

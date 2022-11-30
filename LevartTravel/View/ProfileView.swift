@@ -70,6 +70,7 @@ struct NetworkImage: View {
        let uiImage = UIImage(data: data) {
       Image(uiImage: uiImage)
         .resizable()
+        .cornerRadius(100)
         .aspectRatio(contentMode: .fit)
     } else {
       Image(systemName: "person.circle.fill")

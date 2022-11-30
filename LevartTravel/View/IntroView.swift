@@ -104,21 +104,7 @@ struct IntroView: View {
             }
             .overlay(alignment: .bottom, content: {
                 //MARK: Bottom, Sign In button
-                let isLast = currentIndex == intros.count
                 
-                HStack(spacing: 10) {
-                    Text("Already have an account?")
-                        .font(.custom("Poppins-Regular", size: 14))
-                        .foregroundColor(.gray)
-                    
-                    Button("Login") {
-                        
-                    }
-                    .font(.custom("Poppins-Bold", size: 14))
-                    .foregroundColor(.black)
-                }
-                .offset(y: isLast ? -12 : 100)
-                .animation(.interactiveSpring(response: 0.9, dampingFraction: 0.8, blendDuration: 0.5), value: isLast)
             })
             .offset(y: showWalkThroughScreen ? 0 : size.height)
         }

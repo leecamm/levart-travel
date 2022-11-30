@@ -25,15 +25,36 @@ struct ContentView: View {
     var body: some View {
 //        IntroView()
     
+        
+        
         if UserDefaults.standard.welcomeScreenShown {
 //            Home()
             switch viewModel.state {
-                case .signedIn: Home()
+                case .signedIn:
+                TabView {
+                    Home()
+                        .tabItem {
+                            Label("Home", systemImage: "house")
+                        }
+                    Home()
+                        .tabItem {
+                            Label("Packing List", systemImage: "checklist")
+                        }
+                    Home()
+                        .tabItem {
+                            Label("Itinerary", systemImage: "mappin")
+                        }
+                    ProfileView()
+                        .tabItem {
+                            Label("Profile", systemImage: "person.crop.square")
+                        }
+                }
                 case .signedOut: LoginView()
             }
         } else {
             IntroView()
         }
+        
     }
 }
 

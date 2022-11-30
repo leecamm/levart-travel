@@ -19,6 +19,15 @@
 		DB26BEA1291E6D4100ED6E3A /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DB26BE9C291E6D4100ED6E3A /* Poppins-Bold.ttf */; };
 		DB4635B5291F012800FCC73E /* Intro.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4635B4291F012800FCC73E /* Intro.swift */; };
 		DB4635B729251D5300FCC73E /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4635B629251D5300FCC73E /* IntroView.swift */; };
+		DB4BF54C2936D4A300008BA5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB4BF54B2936D4A300008BA5 /* GoogleService-Info.plist */; };
+		DB4BF54F2936D60300008BA5 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = DB4BF54E2936D60300008BA5 /* FirebaseAnalytics */; };
+		DB4BF5512936D60300008BA5 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = DB4BF5502936D60300008BA5 /* FirebaseAuth */; };
+		DB4BF5532936D60300008BA5 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = DB4BF5522936D60300008BA5 /* FirebaseStorage */; };
+		DB4BF5562936D8AF00008BA5 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = DB4BF5552936D8AF00008BA5 /* GoogleSignIn */; };
+		DB4BF5582936D98000008BA5 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4BF5572936D98000008BA5 /* AuthenticationViewModel.swift */; };
+		DB4BF55B29375CCD00008BA5 /* GoogleSignInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4BF55A29375CCD00008BA5 /* GoogleSignInButton.swift */; };
+		DB4BF55D29375EC000008BA5 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4BF55C29375EC000008BA5 /* LoginView.swift */; };
+		DB4BF55F29376AED00008BA5 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4BF55E29376AED00008BA5 /* ProfileView.swift */; };
 		DB803F842927A98F00AE5522 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB803F832927A98F00AE5522 /* Home.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +46,11 @@
 		DB26BEA2291E6E2B00ED6E3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		DB4635B4291F012800FCC73E /* Intro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Intro.swift; sourceTree = "<group>"; };
 		DB4635B629251D5300FCC73E /* IntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroView.swift; sourceTree = "<group>"; };
+		DB4BF54B2936D4A300008BA5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DB4BF5572936D98000008BA5 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
+		DB4BF55A29375CCD00008BA5 /* GoogleSignInButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignInButton.swift; sourceTree = "<group>"; };
+		DB4BF55C29375EC000008BA5 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		DB4BF55E29376AED00008BA5 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		DB803F832927A98F00AE5522 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -45,6 +59,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB4BF54F2936D60300008BA5 /* FirebaseAnalytics in Frameworks */,
+				DB4BF5562936D8AF00008BA5 /* GoogleSignIn in Frameworks */,
+				DB4BF5512936D60300008BA5 /* FirebaseAuth in Frameworks */,
+				DB4BF5532936D60300008BA5 /* FirebaseStorage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,9 +88,11 @@
 		DB26BE84291E5F1700ED6E3A /* LevartTravel */ = {
 			isa = PBXGroup;
 			children = (
+				DB4BF55929375CAD00008BA5 /* Components */,
 				DB4635B3291F010300FCC73E /* View */,
 				DB4635B2291F00E700FCC73E /* Model */,
 				DB26BEA2291E6E2B00ED6E3A /* Info.plist */,
+				DB4BF54B2936D4A300008BA5 /* GoogleService-Info.plist */,
 				DB26BE97291E6D1800ED6E3A /* Font */,
 				DB26BE85291E5F1700ED6E3A /* LevartTravelApp.swift */,
 				DB26BE87291E5F1700ED6E3A /* ContentView.swift */,
@@ -107,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				DB4635B4291F012800FCC73E /* Intro.swift */,
+				DB4BF5572936D98000008BA5 /* AuthenticationViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -116,8 +137,18 @@
 			children = (
 				DB4635B629251D5300FCC73E /* IntroView.swift */,
 				DB803F832927A98F00AE5522 /* Home.swift */,
+				DB4BF55C29375EC000008BA5 /* LoginView.swift */,
+				DB4BF55E29376AED00008BA5 /* ProfileView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		DB4BF55929375CAD00008BA5 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				DB4BF55A29375CCD00008BA5 /* GoogleSignInButton.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,6 +167,12 @@
 			dependencies = (
 			);
 			name = LevartTravel;
+			packageProductDependencies = (
+				DB4BF54E2936D60300008BA5 /* FirebaseAnalytics */,
+				DB4BF5502936D60300008BA5 /* FirebaseAuth */,
+				DB4BF5522936D60300008BA5 /* FirebaseStorage */,
+				DB4BF5552936D8AF00008BA5 /* GoogleSignIn */,
+			);
 			productName = LevartTravel;
 			productReference = DB26BE82291E5F1700ED6E3A /* LevartTravel.app */;
 			productType = "com.apple.product-type.application";
@@ -164,6 +201,10 @@
 				Base,
 			);
 			mainGroup = DB26BE79291E5F1700ED6E3A;
+			packageReferences = (
+				DB4BF54D2936D60300008BA5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				DB4BF5542936D8AF00008BA5 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+			);
 			productRefGroup = DB26BE83291E5F1700ED6E3A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -179,6 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB26BE9E291E6D4100ED6E3A /* Poppins-ExtraBold.ttf in Resources */,
+				DB4BF54C2936D4A300008BA5 /* GoogleService-Info.plist in Resources */,
 				DB26BE9D291E6D4100ED6E3A /* Poppins-SemiBold.ttf in Resources */,
 				DB26BEA1291E6D4100ED6E3A /* Poppins-Bold.ttf in Resources */,
 				DB26BE8D291E5F1A00ED6E3A /* Preview Assets.xcassets in Resources */,
@@ -197,7 +239,11 @@
 			files = (
 				DB26BE88291E5F1700ED6E3A /* ContentView.swift in Sources */,
 				DB26BE86291E5F1700ED6E3A /* LevartTravelApp.swift in Sources */,
+				DB4BF55F29376AED00008BA5 /* ProfileView.swift in Sources */,
+				DB4BF5582936D98000008BA5 /* AuthenticationViewModel.swift in Sources */,
+				DB4BF55D29375EC000008BA5 /* LoginView.swift in Sources */,
 				DB4635B729251D5300FCC73E /* IntroView.swift in Sources */,
+				DB4BF55B29375CCD00008BA5 /* GoogleSignInButton.swift in Sources */,
 				DB4635B5291F012800FCC73E /* Intro.swift in Sources */,
 				DB803F842927A98F00AE5522 /* Home.swift in Sources */,
 				DB26BE94291E67A300ED6E3A /* SplashScreenView.swift in Sources */,
@@ -333,11 +379,14 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LevartTravel/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = S;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -363,11 +412,14 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LevartTravel/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = S;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -403,6 +455,48 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DB4BF54D2936D60300008BA5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+		DB4BF5542936D8AF00008BA5 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DB4BF54E2936D60300008BA5 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DB4BF54D2936D60300008BA5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		DB4BF5502936D60300008BA5 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DB4BF54D2936D60300008BA5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		DB4BF5522936D60300008BA5 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DB4BF54D2936D60300008BA5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+		DB4BF5552936D8AF00008BA5 /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DB4BF5542936D8AF00008BA5 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DB26BE7A291E5F1700ED6E3A /* Project object */;
 }

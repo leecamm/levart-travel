@@ -9,6 +9,9 @@ import SwiftUI
 
 
 struct IntroView: View {
+    @AppStorage("welcomeScreenShown") // User Defaults
+    var welcomeScreenShown: Bool = false
+    
     //MARK: Animation Properties
     @State var showWalkThroughScreen: Bool = false
     @State var currentIndex: Int = 0
@@ -17,7 +20,8 @@ struct IntroView: View {
     var body: some View {
         ZStack {
             if showHomeView {
-                Home()
+//                Home()
+                LoginView()
                     .transition(.move(edge: .trailing))
             } else {
                 ZStack {
@@ -33,6 +37,9 @@ struct IntroView: View {
             }
         }
         .animation(.easeInOut(duration: 0.35), value: showHomeView)
+        .onAppear(perform: {
+            UserDefaults.standard.welcomeScreenShown = true
+        })
     }
     
     //MARK: WalkThrough Screens
@@ -61,7 +68,7 @@ struct IntroView: View {
                         .opacity(!isLast ? 1 : 0)
                     
                     HStack {
-                        Text("Sign Up")
+                        Text("Let's Get Started")
                             .font(.custom("Poppins-Bold", size: 15))
                             .foregroundColor(.white)
                             .frame(maxWidth: .infinity, alignment: .leading)
@@ -267,7 +274,7 @@ struct IntroView: View {
 
 struct IntroView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        IntroView()
     }
 }
 

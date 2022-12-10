@@ -40,13 +40,8 @@ struct LoginView: View {
                     .onTapGesture {
                         viewModel.signIn()
                     }
-                
-                
             }
-           
-         
         }
-        
     }
 }
 

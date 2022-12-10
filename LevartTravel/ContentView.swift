@@ -24,9 +24,6 @@ struct ContentView: View {
     
     var body: some View {
 //        IntroView()
-    
-        
-        
         if UserDefaults.standard.welcomeScreenShown {
 //            Home()
             switch viewModel.state {
@@ -36,11 +33,11 @@ struct ContentView: View {
                         .tabItem {
                             Label("Home", systemImage: "house")
                         }
-                    Home()
+                    PackingListView()
                         .tabItem {
                             Label("Packing List", systemImage: "checklist")
                         }
-                    Home()
+                    BooksListView()
                         .tabItem {
                             Label("Itinerary", systemImage: "mappin")
                         }
@@ -54,7 +51,6 @@ struct ContentView: View {
         } else {
             IntroView()
         }
-        
     }
 }
 

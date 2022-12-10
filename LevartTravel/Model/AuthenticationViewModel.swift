@@ -8,9 +8,11 @@
 import Foundation
 import Firebase
 import GoogleSignIn
+import FirebaseFirestore
 
 class AuthenticationViewModel: ObservableObject {
 
+  @Published var user: User?
   // 1
   enum SignInState {
     case signedIn
@@ -40,6 +42,7 @@ class AuthenticationViewModel: ObservableObject {
           // 5
           GIDSignIn.sharedInstance.signIn(with: configuration, presenting: rootViewController) { [unowned self] user, error in
             authenticateUser(for: user, with: error)
+              
           }
         }
       }
@@ -57,11 +60,26 @@ class AuthenticationViewModel: ObservableObject {
         let credential = GoogleAuthProvider.credential(withIDToken: idToken, accessToken: authentication.accessToken)
         
         // 3
-        Auth.auth().signIn(with: credential) { [unowned self] (_, error) in
+        Auth.auth().signIn(with: credential) { [unowned self] (result, error) in
           if let error = error {
             print(error.localizedDescription)
           } else {
             state = .signedIn
+              
+            let db = Firestore.firestore()
+//              var ref: DocumentReference? = nil
+           
+              db.collection("users").document((result!.user.uid)).setData([
+                "email": result!.user.email ?? "",
+                "name": result!.user.displayName ?? "",
+                "uid":result!.user.uid
+              ]) { err in
+                  if let err = err {
+                      print("Error adding document: \(err)")
+                  } else {
+                      print("Document added with ID: \(result!.user.uid)")
+                  }
+              }
           }
         }
       }

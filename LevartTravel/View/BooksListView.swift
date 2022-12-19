@@ -9,19 +9,32 @@ import SwiftUI
 
 struct BooksListView: View {
   @ObservedObject var viewModel = BooksViewModel()
-
+  @State private var showSecondView = false
+    
+    
+    
+    var writerForSecondView = Book(
+        id: .init(),
+            title: "",
+            author: "Monaco",
+            numberOfPages: 100
+        )
+    
   var body: some View {
     NavigationView {
         VStack(spacing: 20) {
             ForEach(viewModel.books) { book in
-                VStack(alignment: .leading) {
-                  Text(book.title)
-                    .font(.headline)
-                  Text(book.author)
-                    .font(.subheadline)
-                  Text("\(book.numberOfPages) pages")
-                    .font(.subheadline)
-                    Divider()
+                    VStack(alignment: .leading) {
+                        Text(book.title)
+                            .font(.headline)
+                        Text(book.author)
+                            .font(.subheadline)
+                        Text("\(book.numberOfPages) pages")
+                            .font(.subheadline)
+                        Divider()
+                    }
+                    .onTapGesture {
+                    self.showSecondView.toggle()
                 }
             }
         }
@@ -38,3 +51,4 @@ struct BooksListView_Previews: PreviewProvider {
         BooksListView()
     }
 }
+

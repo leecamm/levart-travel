@@ -38,7 +38,7 @@ class FirestorePackingItemRepository: BasePackingItemRepository, PackingItemRepo
     
     authenticationService.$user
       .compactMap { user in
-        user?.uid 
+        user?.uid
       }
       .assign(to: \.userId, on: self)
       .store(in: &cancellables)
@@ -48,6 +48,7 @@ class FirestorePackingItemRepository: BasePackingItemRepository, PackingItemRepo
       .receive(on: DispatchQueue.main)
       .sink { user in
         self.loadData()
+//        self.fetchData()
       }
       .store(in: &cancellables)
   }
@@ -58,7 +59,7 @@ class FirestorePackingItemRepository: BasePackingItemRepository, PackingItemRepo
       
       let packingListRef = db.collection("users").document(userID).collection("packingList")
       
-    packingListRef
+    packingListRef.order(by: "category", descending: true)
 //          .whereField("category", isEqualTo: "Clothes")
       .addSnapshotListener { (querySnapshot, error) in
         if let querySnapshot = querySnapshot {
@@ -93,7 +94,7 @@ class FirestorePackingItemRepository: BasePackingItemRepository, PackingItemRepo
 //                self.packingItems = documents.map { queryDocumentSnapshot -> PackingItem in
 //                    let data = queryDocumentSnapshot.data()
 //                    print(data)
-//                  let id = data["documentId"] as String ?? ""
+////                  let id = data["documentId"] as String ?? ""
 //                    let name = data["name"] as? String ?? ""
 //                    let category = data["category"] as? String ?? ""
 //                    let isPacked = data["isPacked"] as? Bool ?? true
@@ -108,11 +109,11 @@ class FirestorePackingItemRepository: BasePackingItemRepository, PackingItemRepo
   func addPackingItem(_ packingItem: PackingItem) {
       guard let userID = Auth.auth().currentUser?.uid else { return }
       print(userID)
-      let packingListRef = db.collection("users").document(userID).collection("packingList")
+      let packingListRef = db.collection("users").document(userID).collection("packingList").document(packingItem.name)
     do {
       var userPackingItem = packingItem
-        userPackingItem.userId = self.userId // (10)
-        let _ = try packingListRef.addDocument(from: userPackingItem)
+        userPackingItem.userId = self.userId
+        let _ = try packingListRef.setData(from: userPackingItem)
         print("Added item")
     }
     catch {
@@ -125,7 +126,7 @@ class FirestorePackingItemRepository: BasePackingItemRepository, PackingItemRepo
       print(userID)
       let packingListRef = db.collection("users").document(userID).collection("packingList")
       
-    if let packingItemID = packingItem.id {
+      if let packingItemID = packingItem.id {
         print("packingItemID: \(packingItemID)")
         packingListRef.document(packingItemID).delete { (error) in
         if let error = error {

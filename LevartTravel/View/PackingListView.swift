@@ -6,109 +6,80 @@
 //
 
 import SwiftUI
+import WrappingHStack
 
 struct PackingListView: View {
     
     init() {
-            //Use this if NavigationBarTitle is with Large Font
-            UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.black]
-
-            //Use this if NavigationBarTitle is with displayMode = .inline
-            UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.black]
-        }
+        //Use this if NavigationBarTitle is with Large Font
+        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.black]
+        
+        //Use this if NavigationBarTitle is with displayMode = .inline
+        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.black]
+    }
     
     @ObservedObject var packingListVM = PackingListViewModel() // (7)
     @State var presentAddNewItem = false
     
+    let columns = [
+        GridItem(.flexible()),
+        GridItem(.flexible())
+    ]
+
     var body: some View {
         NavigationStack {
             ZStack(alignment: .top) {
                 Color("BG").ignoresSafeArea()
-                VStack(alignment: .leading, spacing: 0) {
-                    VStack(alignment: .leading, spacing: 10) {
-                        Text("Clothes")
-                            .font(.custom("Poppins-Semibold", size: 18))
-                        HStack(spacing: 20){
-                            ForEach (packingListVM.packingItemCellViewModels) { packingItemCellVM in // (8)
-                                PackingItemCell(packingItemCellVM: packingItemCellVM) // (1)
-                            }
-                            
-                            .onDelete { indexSet in
-                                self.packingListVM.removePackingItems(atOffsets: indexSet)
-                            }
-                            
-                            if presentAddNewItem {
-                                PackingItemCell(packingItemCellVM: PackingItemCellViewModel.newPackingItem()) { result in
-                                    if case .success(let packingItem) = result {
-                                        self.packingListVM.addPackingItem(packingItem: packingItem)
+                ScrollView{
+                    VStack(alignment: .leading, spacing: 0) {
+                        VStack(alignment: .leading, spacing: 10) {
+                          
+                            LazyVGrid(columns: columns, spacing: 18) {
+                              
+                                    ForEach(packingListVM.packingItemCellViewModels) { packingItemCellVM in
+                                        PackingItemCell(packingItemCellVM: packingItemCellVM)
                                     }
-                                    self.presentAddNewItem.toggle()
+                                    .onDelete { indexSet in
+                                        self.packingListVM.removePackingItems(atOffsets: indexSet)
+                                    }
                                     
-                                }
+                                    if presentAddNewItem {
+                                        PackingItemCell(packingItemCellVM: PackingItemCellViewModel.newPackingItem()) { result in
+                                            if case .success(let packingItem) = result {
+                                                self.packingListVM.addPackingItem(packingItem: packingItem)
+                                            }
+                                            self.presentAddNewItem.toggle()
+                                            
+                                        }
+                                    }
+                                
+                            }.padding(.horizontal)
+                        }
+                        .navigationTitle("Packing List")
+                        .frame(maxWidth: .infinity, alignment: .topLeading)
+                        .padding(.top, 20)
+                        .padding(.leading, 20)
+                        .padding(.trailing, 10)
+                        Spacer()
+                        Button(action: { self.presentAddNewItem.toggle() }) {
+                            HStack {
+                                Image(systemName: "plus.circle.fill")
+                                    .resizable()
+                                    .frame(width: 20, height: 20)
+                                Text("New Item")
                             }
                         }
+                        .padding()
+                        .accentColor(Color(UIColor.systemRed))
+                    }
+                    .onAppear() {
                         
                     }
-                    
-                    
-                    .navigationTitle("Packing List")
-                    .frame(maxWidth: .infinity, alignment: .topLeading)
-                    .padding(.top, 20)
-                    .padding(.leading, 20)
-                    .padding(.trailing, 10)
-                    Spacer()
-                    Button(action: { self.presentAddNewItem.toggle() }) {
-                        HStack {
-                            Image(systemName: "plus.circle.fill")
-                                .resizable()
-                                .frame(width: 20, height: 20)
-                            Text("New Item")
-                        }
-                    }
-                    .padding()
-                    .accentColor(Color(UIColor.systemRed))
+                    .navigationBarTitle("Packing List")
+                    .foregroundColor(.black)
                 }
-                .onAppear() {
-                    
-                }
-                .navigationBarTitle("Packing List")
-                .foregroundColor(.black)
             }
         }
-        //    var body: some View {
-        //        NavigationStack {
-        //            ZStack(alignment: .top){
-        //                Color("BG")
-        //                    .ignoresSafeArea()
-        //                VStack(alignment: .leading, spacing: 0) {
-        //                    VStack(alignment: .leading, spacing: 10) {
-        //                        ForEach(viewModel.packingLists) { item in
-        //                            HStack(alignment: .top) {
-        //                                Image(systemName: item.isPacked ? "checkmark.circle.fill": "circle")
-        //                                    .onTapGesture {
-        //
-        //                                    }
-        //                                Text(item.name)
-        //                                    .font(.headline)
-        //                                Text(item.category)
-        //                                    .font(.subheadline)
-        //                            }
-        //                        }
-        //                    }
-        //                    .navigationTitle("Packing List")
-        //                    .frame(maxWidth: .infinity, alignment: .topLeading)
-        //                    .padding(.top, 20)
-        //                    .padding(.leading, 20)
-        //                    .padding(.trailing, 10)
-        //                }
-        //
-        //
-        //                .onAppear() {
-        //                    self.viewModel.fetchData()
-        //                }
-        //            }
-        //        }
-        //    }
     }
     
     struct PackingListView_Previews: PreviewProvider {
@@ -146,3 +117,4 @@ struct PackingListView: View {
         case empty
     }
 }
+

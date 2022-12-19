@@ -26,12 +26,12 @@ class PackingItemCellViewModel: ObservableObject, Identifiable  {
   init(packingItem: PackingItem) {
     self.packingItem = packingItem
 
-    $packingItem // (8)
+    $packingItem
       .map { $0.isPacked ? "checkmark.circle.fill" : "circle" }
       .assign(to: \.completionStateIconName, on: self)
       .store(in: &cancellables)
 
-    $packingItem // (7)
+    $packingItem 
       .map { $0.id ?? "" }
       .assign(to: \.id, on: self)
       .store(in: &cancellables)
@@ -44,6 +44,4 @@ class PackingItemCellViewModel: ObservableObject, Identifiable  {
           }
           .store(in: &cancellables)
   }
-  
 }
-

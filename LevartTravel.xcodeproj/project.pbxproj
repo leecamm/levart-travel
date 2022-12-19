@@ -34,6 +34,7 @@
 		DB4BF56E2938DDC700008BA5 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = DB4BF56D2938DDC700008BA5 /* FirebaseFirestore */; };
 		DB4BF5702938F48800008BA5 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4BF56F2938F48800008BA5 /* Book.swift */; };
 		DB803F842927A98F00AE5522 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB803F832927A98F00AE5522 /* Home.swift */; };
+		DB8C85B1294A17D200E08473 /* DestinationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8C85B0294A17D200E08473 /* DestinationViewModel.swift */; };
 		DB912CE02940B9FC0001BC64 /* PackingListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB912CDF2940B9FC0001BC64 /* PackingListViewModel.swift */; };
 		DB912CE22940BB630001BC64 /* PackingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB912CE12940BB630001BC64 /* PackingListView.swift */; };
 		DB912D112941E0400001BC64 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DB912D102941E0400001BC64 /* FirebaseFirestoreSwift */; };
@@ -43,6 +44,8 @@
 		DB912D242941F7070001BC64 /* Disk in Frameworks */ = {isa = PBXBuildFile; productRef = DB912D232941F7070001BC64 /* Disk */; };
 		DB912D4D29437AEE0001BC64 /* PackingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB912D4C29437AEE0001BC64 /* PackingItem.swift */; };
 		DB912D4F2943816F0001BC64 /* PackingItemCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB912D4E2943816F0001BC64 /* PackingItemCellViewModel.swift */; };
+		DB912D522948C9100001BC64 /* WrappingHStack in Frameworks */ = {isa = PBXBuildFile; productRef = DB912D512948C9100001BC64 /* WrappingHStack */; };
+		DBC34BD8294B537C00F3CBD2 /* DestinationDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC34BD7294B537C00F3CBD2 /* DestinationDetailsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,12 +73,14 @@
 		DB4BF56A2938DAC100008BA5 /* BooksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksViewModel.swift; sourceTree = "<group>"; };
 		DB4BF56F2938F48800008BA5 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		DB803F832927A98F00AE5522 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		DB8C85B0294A17D200E08473 /* DestinationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationViewModel.swift; sourceTree = "<group>"; };
 		DB912CDF2940B9FC0001BC64 /* PackingListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackingListViewModel.swift; sourceTree = "<group>"; };
 		DB912CE12940BB630001BC64 /* PackingListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackingListView.swift; sourceTree = "<group>"; };
 		DB912D1B2941F25F0001BC64 /* PackingItemRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackingItemRepository.swift; sourceTree = "<group>"; };
 		DB912D202941F6050001BC64 /* AppDelegate+Resolving.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Resolving.swift"; sourceTree = "<group>"; };
 		DB912D4C29437AEE0001BC64 /* PackingItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackingItem.swift; sourceTree = "<group>"; };
 		DB912D4E2943816F0001BC64 /* PackingItemCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackingItemCellViewModel.swift; sourceTree = "<group>"; };
+		DBC34BD7294B537C00F3CBD2 /* DestinationDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationDetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +92,7 @@
 				DB4BF5562936D8AF00008BA5 /* GoogleSignIn in Frameworks */,
 				DB4BF5512936D60300008BA5 /* FirebaseAuth in Frameworks */,
 				DB4BF56E2938DDC700008BA5 /* FirebaseFirestore in Frameworks */,
+				DB912D522948C9100001BC64 /* WrappingHStack in Frameworks */,
 				DB4BF5532936D60300008BA5 /* FirebaseStorage in Frameworks */,
 				DB912D1F2941F5550001BC64 /* Resolver in Frameworks */,
 				DB912D112941E0400001BC64 /* FirebaseFirestoreSwift in Frameworks */,
@@ -164,6 +170,7 @@
 				DB912CDF2940B9FC0001BC64 /* PackingListViewModel.swift */,
 				DB912D4C29437AEE0001BC64 /* PackingItem.swift */,
 				DB912D4E2943816F0001BC64 /* PackingItemCellViewModel.swift */,
+				DB8C85B0294A17D200E08473 /* DestinationViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -178,6 +185,7 @@
 				DB4BF56429381F1100008BA5 /* SearchView.swift */,
 				DB4BF5662938D88E00008BA5 /* BooksListView.swift */,
 				DB912CE12940BB630001BC64 /* PackingListView.swift */,
+				DBC34BD7294B537C00F3CBD2 /* DestinationDetailsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -230,6 +238,7 @@
 				DB912D102941E0400001BC64 /* FirebaseFirestoreSwift */,
 				DB912D1E2941F5550001BC64 /* Resolver */,
 				DB912D232941F7070001BC64 /* Disk */,
+				DB912D512948C9100001BC64 /* WrappingHStack */,
 			);
 			productName = LevartTravel;
 			productReference = DB26BE82291E5F1700ED6E3A /* LevartTravel.app */;
@@ -264,6 +273,7 @@
 				DB4BF5542936D8AF00008BA5 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 				DB912D1D2941F5550001BC64 /* XCRemoteSwiftPackageReference "Resolver" */,
 				DB912D222941F7070001BC64 /* XCRemoteSwiftPackageReference "Disk" */,
+				DB912D502948C9100001BC64 /* XCRemoteSwiftPackageReference "WrappingHStack" */,
 			);
 			productRefGroup = DB26BE83291E5F1700ED6E3A /* Products */;
 			projectDirPath = "";
@@ -301,6 +311,7 @@
 				DB26BE88291E5F1700ED6E3A /* ContentView.swift in Sources */,
 				DB912D212941F6050001BC64 /* AppDelegate+Resolving.swift in Sources */,
 				DB4BF5702938F48800008BA5 /* Book.swift in Sources */,
+				DBC34BD8294B537C00F3CBD2 /* DestinationDetailsView.swift in Sources */,
 				DB26BE86291E5F1700ED6E3A /* LevartTravelApp.swift in Sources */,
 				DB912CE22940BB630001BC64 /* PackingListView.swift in Sources */,
 				DB4BF55F29376AED00008BA5 /* ProfileView.swift in Sources */,
@@ -316,6 +327,7 @@
 				DB803F842927A98F00AE5522 /* Home.swift in Sources */,
 				DB26BE94291E67A300ED6E3A /* SplashScreenView.swift in Sources */,
 				DB912D4D29437AEE0001BC64 /* PackingItem.swift in Sources */,
+				DB8C85B1294A17D200E08473 /* DestinationViewModel.swift in Sources */,
 				DB4BF56529381F1100008BA5 /* SearchView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -559,6 +571,14 @@
 				minimumVersion = 0.6.4;
 			};
 		};
+		DB912D502948C9100001BC64 /* XCRemoteSwiftPackageReference "WrappingHStack" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dkk/WrappingHStack";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -601,6 +621,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DB912D222941F7070001BC64 /* XCRemoteSwiftPackageReference "Disk" */;
 			productName = Disk;
+		};
+		DB912D512948C9100001BC64 /* WrappingHStack */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DB912D502948C9100001BC64 /* XCRemoteSwiftPackageReference "WrappingHStack" */;
+			productName = WrappingHStack;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -11,7 +11,6 @@ import GoogleSignIn
 import FirebaseFirestore
 
 class AuthenticationViewModel: ObservableObject {
-
   @Published var user: User?
   // 1
   enum SignInState {
@@ -67,6 +66,7 @@ class AuthenticationViewModel: ObservableObject {
             state = .signedIn
               
             let db = Firestore.firestore()
+            let batch = db.batch()
 //              var ref: DocumentReference? = nil
            
               db.collection("users").document((result!.user.uid)).setData([
@@ -80,6 +80,22 @@ class AuthenticationViewModel: ObservableObject {
                       print("Document added with ID: \(result!.user.uid)")
                   }
               }
+            
+//              db.collection("users/\(result!.user.uid)/packingList").addDocument(data: Item)
+            
+            
+              Item.forEach { item in
+                  let docRef = db.collection("users/\(result!.user.uid)/packingList").document(item["name"] as! String)
+                  batch.setData(item, forDocument: docRef, merge: true)
+                  }
+
+                  batch.commit(completion: { (error) in
+                      if let error = error {
+                          print("\(error)")
+                      } else {
+                          print("success")
+                      }
+                  })
           }
         }
       }

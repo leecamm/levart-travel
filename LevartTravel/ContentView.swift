@@ -45,7 +45,11 @@ struct ContentView: View {
                         .tabItem {
                             Label("Profile", systemImage: "person.crop.square")
                         }
-                }
+                }.accentColor(.black)
+                    .onAppear() {
+                                UITabBar.appearance().unselectedItemTintColor = .gray
+                            }
+
                 case .signedOut: LoginView()
             }
         } else {

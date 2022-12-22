@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ItineraryView: View {
+    @ObservedObject var viewModel = ItineraryViewModel()
     @StateObject var itineraryModel: ItineraryViewModel = ItineraryViewModel()
     @Namespace var animation
     
@@ -16,14 +17,13 @@ struct ItineraryView: View {
             Color("BG").ignoresSafeArea()
             ScrollView(.vertical, showsIndicators: false) {
                 //MARK: Lazy Stack With Pinned Header
-                LazyVStack(spacing: 15, pinnedViews: [.sectionHeaders]) {
+                LazyVStack(spacing: 20, pinnedViews: [.sectionHeaders]) {
                     Section {
                         
                         //MARK: Current Week View
                         ScrollView(.horizontal, showsIndicators: false) {
                             HStack(spacing: 10) {
                                 ForEach(itineraryModel.currentWeek, id: \.self) { day in
-                                    
                                     VStack(spacing: 10) {
                                         Text(itineraryModel.extractDate(date: day, format: "dd"))
                                             .font(.custom("Poppins-SemiBold", size: 14))
@@ -70,8 +70,10 @@ struct ItineraryView: View {
                 }
             }
             .ignoresSafeArea(.container, edges: .top)
+//            .onAppear() {
+//              self.viewModel.fetchData()
+//            }
         }
-        
     }
     
     //MARK: Itinerary Task View
@@ -87,6 +89,7 @@ struct ItineraryView: View {
                     ForEach(plans) {plan in
                         PlanCardView(plan: plan)
                     }
+                    .padding(.bottom, 10)
                 }
             }
             else {
@@ -108,13 +111,14 @@ struct ItineraryView: View {
         HStack(alignment: .top, spacing: 30) {
             VStack(spacing: 10) {
                 Circle()
-                    .fill(.orange)
+                    .fill(itineraryModel.isCurrentHour(date: plan.itineraryDate) ? .orange : .clear)
                     .frame(width: 15, height: 15)
                     .background(
                         Circle()
                             .stroke(.orange, lineWidth: 1)
                             .padding(-3)
                     )
+                    .scaleEffect(!itineraryModel.isCurrentHour(date: plan.itineraryDate) ? 0.8 : 1)
                 Rectangle()
                     .fill(.orange)
                     .frame(width: 3)
@@ -133,15 +137,23 @@ struct ItineraryView: View {
                     Text(plan.itineraryDate.formatted(date: .omitted, time: .shortened))
                         .font(.custom("Poppins-Regular", size: 14))
                 }
+            
             }
             .foregroundColor(.black)
-            .padding()
+            .padding(15)
             .hLeading()
             .background(
                 Color(.white)
                     .cornerRadius(25)
                     .shadow(radius: 5, x: 5, y: 5)
+                    .opacity(itineraryModel.isCurrentHour(date: plan.itineraryDate) ? 1 : 0)
             )
+            .overlay(itineraryModel.isCurrentHour(date: plan.itineraryDate) ?
+                        RoundedRectangle(cornerRadius: 25)
+                .stroke(.clear, lineWidth: 1)
+                     : RoundedRectangle(cornerRadius: 25)
+                .stroke(Color.gray, lineWidth: 2)
+                    )
             
         }
         .hLeading()
@@ -155,7 +167,7 @@ struct ItineraryView: View {
                     .foregroundColor(.gray)
                 
                 Text("Itinerary")
-                    .font(.custom("Poppins-Bold", size: 30))
+                    .font(.custom("Poppins-Bold", size: 36))
             }
             .hLeading()
         }
@@ -197,4 +209,6 @@ extension View {
         }
         return safeArea
     }
+    
 }
+

@@ -37,7 +37,7 @@ struct ContentView: View {
                         .tabItem {
                             Label("Packing List", systemImage: "checklist")
                         }
-                    BooksListView()
+                    ItineraryView()
                         .tabItem {
                             Label("Itinerary", systemImage: "mappin")
                         }

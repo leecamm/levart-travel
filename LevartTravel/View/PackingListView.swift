@@ -14,8 +14,8 @@ struct PackingListView: View {
         //Use this if NavigationBarTitle is with Large Font
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.black]
         
-        //Use this if NavigationBarTitle is with displayMode = .inline
-        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.black]
+        UINavigationBar.appearance().largeTitleTextAttributes = [.font : UIFont(name: "Poppins-Bold", size: 34)!]
+        
     }
     
     @ObservedObject var packingListVM = PackingListViewModel() // (7)
@@ -25,7 +25,7 @@ struct PackingListView: View {
         GridItem(.flexible()),
         GridItem(.flexible())
     ]
-
+    
     var body: some View {
         NavigationStack {
             ZStack(alignment: .top) {
@@ -33,29 +33,29 @@ struct PackingListView: View {
                 ScrollView{
                     VStack(alignment: .leading, spacing: 0) {
                         VStack(alignment: .leading, spacing: 10) {
-                          
+                            
                             LazyVGrid(columns: columns, spacing: 18) {
-                              
-                                    ForEach(packingListVM.packingItemCellViewModels) { packingItemCellVM in
-                                        PackingItemCell(packingItemCellVM: packingItemCellVM)
-                                    }
-                                    .onDelete { indexSet in
-                                        self.packingListVM.removePackingItems(atOffsets: indexSet)
-                                    }
-                                    
-                                    if presentAddNewItem {
-                                        PackingItemCell(packingItemCellVM: PackingItemCellViewModel.newPackingItem()) { result in
-                                            if case .success(let packingItem) = result {
-                                                self.packingListVM.addPackingItem(packingItem: packingItem)
-                                            }
-                                            self.presentAddNewItem.toggle()
-                                            
+                                
+                                ForEach(packingListVM.packingItemCellViewModels) { packingItemCellVM in
+                                    PackingItemCell(packingItemCellVM: packingItemCellVM)
+                                }
+                                .onDelete { indexSet in
+                                    self.packingListVM.removePackingItems(atOffsets: indexSet)
+                                }
+                                
+                                if presentAddNewItem {
+                                    PackingItemCell(packingItemCellVM: PackingItemCellViewModel.newPackingItem()) { result in
+                                        if case .success(let packingItem) = result {
+                                            self.packingListVM.addPackingItem(packingItem: packingItem)
                                         }
+                                        self.presentAddNewItem.toggle()
+                                        
                                     }
+                                }
                                 
                             }.padding(.horizontal)
+                                .font(.custom("Poppins-Regular", size: 14))
                         }
-                        .navigationTitle("Packing List")
                         .frame(maxWidth: .infinity, alignment: .topLeading)
                         .padding(.top, 20)
                         .padding(.leading, 20)
@@ -67,6 +67,7 @@ struct PackingListView: View {
                                     .resizable()
                                     .frame(width: 20, height: 20)
                                 Text("New Item")
+                                    .font(.custom("Poppins-Regular", size: 18))
                             }
                         }
                         .padding()

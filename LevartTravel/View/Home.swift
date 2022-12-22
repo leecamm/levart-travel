@@ -37,24 +37,25 @@ struct Homepage: View {
                     .ignoresSafeArea()
                 
                 //MARK: Title
-                VStack(alignment: .leading, spacing: 0) {
+                ScrollView{
                     VStack(alignment: .leading, spacing: 0) {
-                        Text("Discover")
-                            .font(.custom("Poppins-Bold", size: 22))
-                            .foregroundColor(.black)
-                        Text("Vietnam")
-                            .font(.custom("Poppins-ExtraBold", size: 36))
-                            .foregroundColor(.black)
+                        VStack(alignment: .leading, spacing: 0) {
+                            Text("Discover")
+                                .font(.custom("Poppins-Bold", size: 22))
+                                .foregroundColor(.black)
+                            Text("Vietnam")
+                                .font(.custom("Poppins-ExtraBold", size: 36))
+                                .foregroundColor(.black)
+                        }
+                        PopularDestination()
+                        MostVisited()
+                        
                     }
-                    PopularDestination()
-                    MostVisited()
-                    
+                    .frame(maxWidth: .infinity, alignment: .topLeading)
+                    .padding(.top, 20)
+                    .padding(.leading, 30)
+                    .padding(.trailing, 10)
                 }
-                .frame(maxWidth: .infinity, alignment: .topLeading)
-                .padding(.top, 20)
-                .padding(.leading, 30)
-                .padding(.trailing, 10)
-                
             }
             .toolbar {
                 HStack{

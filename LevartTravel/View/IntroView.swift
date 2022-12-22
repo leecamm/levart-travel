@@ -125,7 +125,7 @@ struct IntroView: View {
             
                 .animation(.interactiveSpring(response: 0.9, dampingFraction: 0.8, blendDuration: 0.5).delay(currentIndex == index ? 0.2 : 0).delay(currentIndex == index ? 0.2 : 0), value: currentIndex)
             
-            Text(dummyText)
+            Text(intro.description)
                 .font(.custom("Poppins-Regular", size: 14))
                 .foregroundColor(.black)
                 .multilineTextAlignment(.center)
@@ -228,7 +228,7 @@ struct IntroView: View {
                     .foregroundColor(Color(.black))
                     .padding(.top, 50)
                 
-                Text(dummyText)
+                Text("A Southeast Asian country is well known for its beautiful scenery, delicious food, friendly people and vibrant culture")
                     .font(.custom("Poppins-Medium", size: 14))
                     .multilineTextAlignment(.center)
                     .foregroundColor(Color(.black))

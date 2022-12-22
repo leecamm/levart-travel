@@ -88,7 +88,6 @@ class AuthenticationViewModel: ObservableObject {
                   let docRef = db.collection("users/\(result!.user.uid)/packingList").document(item["name"] as! String)
                   batch.setData(item, forDocument: docRef, merge: true)
                   }
-
                   batch.commit(completion: { (error) in
                       if let error = error {
                           print("\(error)")

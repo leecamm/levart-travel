@@ -29,10 +29,7 @@
 		DB4BF55F29376AED00008BA5 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4BF55E29376AED00008BA5 /* ProfileView.swift */; };
 		DB4BF56329378B6F00008BA5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB4BF56229378B6F00008BA5 /* GoogleService-Info.plist */; };
 		DB4BF56529381F1100008BA5 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4BF56429381F1100008BA5 /* SearchView.swift */; };
-		DB4BF5672938D88E00008BA5 /* BooksListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4BF5662938D88E00008BA5 /* BooksListView.swift */; };
-		DB4BF56B2938DAC100008BA5 /* BooksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4BF56A2938DAC100008BA5 /* BooksViewModel.swift */; };
 		DB4BF56E2938DDC700008BA5 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = DB4BF56D2938DDC700008BA5 /* FirebaseFirestore */; };
-		DB4BF5702938F48800008BA5 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4BF56F2938F48800008BA5 /* Book.swift */; };
 		DB803F842927A98F00AE5522 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB803F832927A98F00AE5522 /* Home.swift */; };
 		DB8C85B1294A17D200E08473 /* DestinationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8C85B0294A17D200E08473 /* DestinationViewModel.swift */; };
 		DB912CE02940B9FC0001BC64 /* PackingListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB912CDF2940B9FC0001BC64 /* PackingListViewModel.swift */; };
@@ -46,6 +43,9 @@
 		DB912D4F2943816F0001BC64 /* PackingItemCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB912D4E2943816F0001BC64 /* PackingItemCellViewModel.swift */; };
 		DB912D522948C9100001BC64 /* WrappingHStack in Frameworks */ = {isa = PBXBuildFile; productRef = DB912D512948C9100001BC64 /* WrappingHStack */; };
 		DBC34BD8294B537C00F3CBD2 /* DestinationDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC34BD7294B537C00F3CBD2 /* DestinationDetailsView.swift */; };
+		DBC34BDE29533FC300F3CBD2 /* ItineraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC34BDD29533FC300F3CBD2 /* ItineraryView.swift */; };
+		DBC34BE02953406100F3CBD2 /* Itinerary.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC34BDF2953406100F3CBD2 /* Itinerary.swift */; };
+		DBC34BE22953415400F3CBD2 /* ItineraryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC34BE12953415400F3CBD2 /* ItineraryViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,9 +69,6 @@
 		DB4BF55E29376AED00008BA5 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		DB4BF56229378B6F00008BA5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DB4BF56429381F1100008BA5 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
-		DB4BF5662938D88E00008BA5 /* BooksListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksListView.swift; sourceTree = "<group>"; };
-		DB4BF56A2938DAC100008BA5 /* BooksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksViewModel.swift; sourceTree = "<group>"; };
-		DB4BF56F2938F48800008BA5 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		DB803F832927A98F00AE5522 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		DB8C85B0294A17D200E08473 /* DestinationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationViewModel.swift; sourceTree = "<group>"; };
 		DB912CDF2940B9FC0001BC64 /* PackingListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackingListViewModel.swift; sourceTree = "<group>"; };
@@ -81,6 +78,9 @@
 		DB912D4C29437AEE0001BC64 /* PackingItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackingItem.swift; sourceTree = "<group>"; };
 		DB912D4E2943816F0001BC64 /* PackingItemCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackingItemCellViewModel.swift; sourceTree = "<group>"; };
 		DBC34BD7294B537C00F3CBD2 /* DestinationDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationDetailsView.swift; sourceTree = "<group>"; };
+		DBC34BDD29533FC300F3CBD2 /* ItineraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItineraryView.swift; sourceTree = "<group>"; };
+		DBC34BDF2953406100F3CBD2 /* Itinerary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Itinerary.swift; sourceTree = "<group>"; };
+		DBC34BE12953415400F3CBD2 /* ItineraryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItineraryViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,8 +135,6 @@
 				DB26BE93291E67A300ED6E3A /* SplashScreenView.swift */,
 				DB26BE89291E5F1A00ED6E3A /* Assets.xcassets */,
 				DB26BE8B291E5F1A00ED6E3A /* Preview Content */,
-				DB4BF56A2938DAC100008BA5 /* BooksViewModel.swift */,
-				DB4BF56F2938F48800008BA5 /* Book.swift */,
 				DB912D202941F6050001BC64 /* AppDelegate+Resolving.swift */,
 			);
 			path = LevartTravel;
@@ -171,6 +169,8 @@
 				DB912D4C29437AEE0001BC64 /* PackingItem.swift */,
 				DB912D4E2943816F0001BC64 /* PackingItemCellViewModel.swift */,
 				DB8C85B0294A17D200E08473 /* DestinationViewModel.swift */,
+				DBC34BDF2953406100F3CBD2 /* Itinerary.swift */,
+				DBC34BE12953415400F3CBD2 /* ItineraryViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -183,9 +183,9 @@
 				DB4BF55C29375EC000008BA5 /* LoginView.swift */,
 				DB4BF55E29376AED00008BA5 /* ProfileView.swift */,
 				DB4BF56429381F1100008BA5 /* SearchView.swift */,
-				DB4BF5662938D88E00008BA5 /* BooksListView.swift */,
 				DB912CE12940BB630001BC64 /* PackingListView.swift */,
 				DBC34BD7294B537C00F3CBD2 /* DestinationDetailsView.swift */,
+				DBC34BDD29533FC300F3CBD2 /* ItineraryView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -307,16 +307,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB4BF56B2938DAC100008BA5 /* BooksViewModel.swift in Sources */,
+				DBC34BE02953406100F3CBD2 /* Itinerary.swift in Sources */,
 				DB26BE88291E5F1700ED6E3A /* ContentView.swift in Sources */,
 				DB912D212941F6050001BC64 /* AppDelegate+Resolving.swift in Sources */,
-				DB4BF5702938F48800008BA5 /* Book.swift in Sources */,
+				DBC34BDE29533FC300F3CBD2 /* ItineraryView.swift in Sources */,
 				DBC34BD8294B537C00F3CBD2 /* DestinationDetailsView.swift in Sources */,
 				DB26BE86291E5F1700ED6E3A /* LevartTravelApp.swift in Sources */,
 				DB912CE22940BB630001BC64 /* PackingListView.swift in Sources */,
 				DB4BF55F29376AED00008BA5 /* ProfileView.swift in Sources */,
 				DB912CE02940B9FC0001BC64 /* PackingListViewModel.swift in Sources */,
-				DB4BF5672938D88E00008BA5 /* BooksListView.swift in Sources */,
 				DB912D4F2943816F0001BC64 /* PackingItemCellViewModel.swift in Sources */,
 				DB4BF5582936D98000008BA5 /* AuthenticationViewModel.swift in Sources */,
 				DB4BF55D29375EC000008BA5 /* LoginView.swift in Sources */,
@@ -329,6 +328,7 @@
 				DB912D4D29437AEE0001BC64 /* PackingItem.swift in Sources */,
 				DB8C85B1294A17D200E08473 /* DestinationViewModel.swift in Sources */,
 				DB4BF56529381F1100008BA5 /* SearchView.swift in Sources */,
+				DBC34BE22953415400F3CBD2 /* ItineraryViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

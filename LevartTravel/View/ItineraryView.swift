@@ -19,7 +19,6 @@ struct ItineraryView: View {
                 //MARK: Lazy Stack With Pinned Header
                 LazyVStack(spacing: 20, pinnedViews: [.sectionHeaders]) {
                     Section {
-                        
                         //MARK: Current Week View
                         ScrollView(.horizontal, showsIndicators: false) {
                             HStack(spacing: 10) {

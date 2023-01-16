@@ -21,13 +21,15 @@ extension UserDefaults {
 struct ContentView: View {
     
     @EnvironmentObject var viewModel: AuthenticationViewModel
+    @State private var showSplashScreen = true
     
     var body: some View {
-//        IntroView()
+        //        IntroView()
+        
         if UserDefaults.standard.welcomeScreenShown {
-//            Home()
+            //            Home()
             switch viewModel.state {
-                case .signedIn:
+            case .signedIn:
                 TabView {
                     Home()
                         .tabItem {
@@ -47,11 +49,13 @@ struct ContentView: View {
                         }
                 }.accentColor(.black)
                     .onAppear() {
-                                UITabBar.appearance().unselectedItemTintColor = .gray
-                            }
-
-                case .signedOut: LoginView()
+                        UITabBar.appearance().unselectedItemTintColor = .gray
+                    }
+                
+            case .signedOut: LoginView()
             }
+            
+            
         } else {
             IntroView()
         }

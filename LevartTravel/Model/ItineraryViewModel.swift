@@ -16,10 +16,11 @@ class ItineraryViewModel: ObservableObject {
     // Sample Itinerary
     @Published var storedItineraries: [Itinerary] = [
         Itinerary(itineraryTitle: "Flight3", itineraryDescription: "AMS to HAN", itineraryDate: .init(timeIntervalSince1970: 1671703850)),
-        Itinerary(itineraryTitle: "Flight", itineraryDescription: "AMS to HAN", itineraryDate: .init(timeIntervalSince1970: 1671713721)),
+        Itinerary(itineraryTitle: "Flight", itineraryDescription: "AMS to HAN", itineraryDate: .init(timeIntervalSince1970: 1671718528)),
         Itinerary(itineraryTitle: "Flight2", itineraryDescription: "AMS to HAN", itineraryDate: .init(timeIntervalSince1970: 1671728121)),
         Itinerary(itineraryTitle: "Hotel", itineraryDescription: "Sheraton Hanoi", itineraryDate: .init(timeIntervalSince1970: 1671752968)),
-        Itinerary(itineraryTitle: "Park", itineraryDescription: "West Lake", itineraryDate: .init(timeIntervalSince1970: 1671580168)),
+        Itinerary(itineraryTitle: "Visit Hoan Kiem Lake", itineraryDescription: "Also known as Sword Lake or Tả Vọng Lake", itineraryDate: .init(timeIntervalSince1970: 1671786019)),
+        Itinerary(itineraryTitle: "Visit Hanoi Old quarter", itineraryDescription: "Hoan Kiem District", itineraryDate: .init(timeIntervalSince1970: 1671784219)),
     ]
     
     var db = Firestore.firestore()
@@ -77,41 +78,41 @@ class ItineraryViewModel: ObservableObject {
     }
     
     //MARK: Load Data
-    func fetchData() {
-            guard let userID = Auth.auth().currentUser?.uid else { return }
-            print(userID)
-
-            let itineraryPlanRef = db.collection("users").document(userID).collection("itinerary")
-
-        itineraryPlanRef.addSnapshotListener() {(querySnapshot, err) in
-                if let err = err {
-                    print("Error getting documents: \(err)")
-                } else {
-                    for document in querySnapshot!.documents {
-                        print("\(document.documentID) => \(document.data())")
-                    }
-                }
-
-            itineraryPlanRef.addSnapshotListener { (querySnapshot, error) in
-                    guard let documents = querySnapshot?.documents else {
-                        print("No documents")
-                        return
-                    }
-
-                    self.itineraryPlans = documents.map { queryDocumentSnapshot -> Itinerary in
-                        let data = queryDocumentSnapshot.data()
-                        print(data)
-    //                  let id = data["documentId"] as String ?? ""
-                        let itineraryTitle = data["itineraryTitle"] as? String ?? ""
-                        let itineraryDescription = data["itineraryDescription"] as? String ?? ""
-                        let itineraryDate = data["itineraryDate"]
-
-                        print(Itinerary(id: .init(), itineraryTitle: itineraryTitle, itineraryDescription: itineraryDescription, itineraryDate: itineraryDate as! Date))
-                        return Itinerary(id: .init(), itineraryTitle: itineraryTitle, itineraryDescription: itineraryDescription, itineraryDate: itineraryDate as! Date)
-                    }
-                }
-            }
-        }
+//    func fetchData() {
+//            guard let userID = Auth.auth().currentUser?.uid else { return }
+//            print(userID)
+//
+//            let itineraryPlanRef = db.collection("users").document(userID).collection("itinerary")
+//
+//        itineraryPlanRef.addSnapshotListener() {(querySnapshot, err) in
+//                if let err = err {
+//                    print("Error getting documents: \(err)")
+//                } else {
+//                    for document in querySnapshot!.documents {
+//                        print("\(document.documentID) => \(document.data())")
+//                    }
+//                }
+//
+//            itineraryPlanRef.addSnapshotListener { (querySnapshot, error) in
+//                    guard let documents = querySnapshot?.documents else {
+//                        print("No documents")
+//                        return
+//                    }
+//
+//                    self.itineraryPlans = documents.map { queryDocumentSnapshot -> Itinerary in
+//                        let data = queryDocumentSnapshot.data()
+//                        print(data)
+//    //                  let id = data["documentId"] as String ?? ""
+//                        let itineraryTitle = data["itineraryTitle"] as? String ?? ""
+//                        let itineraryDescription = data["itineraryDescription"] as? String ?? ""
+//                        let itineraryDate = data["itineraryDate"]
+//
+//                        print(Itinerary(id: .init(), itineraryTitle: itineraryTitle, itineraryDescription: itineraryDescription, itineraryDate: itineraryDate!))
+//                        return Itinerary(id: .init(), itineraryTitle: itineraryTitle, itineraryDescription: itineraryDescription, itineraryDate: itineraryDate!)
+//                    }
+//                }
+//            }
+//        }
     
 //    func loadData() {
 //        guard let userID = Auth.auth().currentUser?.uid else { return }

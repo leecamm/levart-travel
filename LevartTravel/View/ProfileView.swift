@@ -9,11 +9,17 @@ import SwiftUI
 import GoogleSignIn
 
 struct ProfileView: View {
-  // 1
   @EnvironmentObject var viewModel: AuthenticationViewModel
   
-  // 2
   private let user = GIDSignIn.sharedInstance.currentUser
+    
+    init() {
+        //Use this if NavigationBarTitle is with Large Font
+        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.black]
+        
+        UINavigationBar.appearance().largeTitleTextAttributes = [.font : UIFont(name: "Poppins-Bold", size: 34)!]
+        
+    }
   
   var body: some View {
       NavigationView {
@@ -48,10 +54,11 @@ struct ProfileView: View {
               // 4
               Button(action: viewModel.signOut) {
                   Text("Sign out")
+                      .font(.custom("Poppins-SemiBold", size: 18))
                       .foregroundColor(.white)
                       .padding()
                       .frame(maxWidth: .infinity)
-                      .background(Color(.systemIndigo))
+                      .background(Color(.systemOrange))
                       .cornerRadius(12)
                       .padding()
               }

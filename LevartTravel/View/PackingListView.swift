@@ -35,23 +35,23 @@ struct PackingListView: View {
                         VStack(alignment: .leading, spacing: 10) {
                             
                             LazyVGrid(columns: columns, spacing: 18) {
-                                
-                                ForEach(packingListVM.packingItemCellViewModels) { packingItemCellVM in
-                                    PackingItemCell(packingItemCellVM: packingItemCellVM)
-                                }
-                                .onDelete { indexSet in
-                                    self.packingListVM.removePackingItems(atOffsets: indexSet)
-                                }
-                                
-                                if presentAddNewItem {
-                                    PackingItemCell(packingItemCellVM: PackingItemCellViewModel.newPackingItem()) { result in
-                                        if case .success(let packingItem) = result {
-                                            self.packingListVM.addPackingItem(packingItem: packingItem)
-                                        }
-                                        self.presentAddNewItem.toggle()
-                                        
+//                                List{
+                                    ForEach(packingListVM.packingItemCellViewModels) { packingItemCellVM in
+                                        PackingItemCell(packingItemCellVM: packingItemCellVM)
                                     }
-                                }
+                                    .onDelete { indexSet in
+                                        self.packingListVM.removePackingItems(atOffsets: indexSet)
+                                    }
+                                    
+                                    if presentAddNewItem {
+                                        PackingItemCell(packingItemCellVM: PackingItemCellViewModel.newPackingItem()) { result in
+                                            if case .success(let packingItem) = result {
+                                                self.packingListVM.addPackingItem(packingItem: packingItem)
+                                            }
+                                            self.presentAddNewItem.toggle()
+                                            
+                                        }
+                                    }
                                 
                             }.padding(.horizontal)
                                 .font(.custom("Poppins-Regular", size: 14))
